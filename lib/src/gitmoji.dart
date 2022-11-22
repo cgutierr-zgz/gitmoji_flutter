@@ -631,7 +631,8 @@ enum Gitmoji {
     emoji: '🛂',
     entity: '&#x1F6C2;',
     code: ':passport_control:',
-    description: 'Work on code related to authorization, roles and permissions.',
+    description:
+        'Work on code related to authorization, roles and permissions.',
     name: 'passport-control',
     semver: Semver.patch,
   ),
@@ -782,14 +783,18 @@ enum Gitmoji {
   static List<Gitmoji> get all => values;
 
   /// Returns the [Gitmoji]s with [Semver.major] semver
-  static List<Gitmoji> get major => values.where((e) => e.semver == Semver.major).toList();
+  static List<Gitmoji> get major =>
+      values.where((e) => e.semver == Semver.major).toList();
 
   /// Returns the [Gitmoji]s with [Semver.minor] semver
-  static List<Gitmoji> get minor => values.where((e) => e.semver == Semver.minor).toList();
+  static List<Gitmoji> get minor =>
+      values.where((e) => e.semver == Semver.minor).toList();
 
   /// Returns the [Gitmoji]s with [Semver.patch] semver
-  static List<Gitmoji> get patch => values.where((e) => e.semver == Semver.patch).toList();
+  static List<Gitmoji> get patch =>
+      values.where((e) => e.semver == Semver.patch).toList();
 
   /// Returns the [Gitmoji]s withthout [Semver]
-  static List<Gitmoji> get none => values.where((e) => e.semver == null).toList();
+  static List<Gitmoji> get none =>
+      values.where((e) => e.semver == null).toList();
 }

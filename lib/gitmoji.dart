@@ -1,5 +1,3 @@
-
-
 /// Gitmoji for Flutter
 library gitmoji;
 
