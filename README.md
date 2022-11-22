@@ -28,7 +28,7 @@ flutter packages get
 [github_actions_link]: https://docs.github.com/en/actions/learn-github-actions
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
-[coverage_badge]: coverage_badge.svg
+[coverage_badge]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/coverage_badge.svg
 [logo_black]: https://raw.githubusercontent.com/VGVentures/very_good_brand/main/styles/README/vgv_logo_black.png#gh-light-mode-only
 [logo_white]: https://raw.githubusercontent.com/VGVentures/very_good_brand/main/styles/README/vgv_logo_white.png#gh-dark-mode-only
 [mason_link]: https://github.com/felangel/mason

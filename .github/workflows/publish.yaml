@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish:
@@ -37,13 +37,6 @@ jobs:
         run: | 
           mkdir -p $HOME/.config/dart
           cat <<EOF > $HOME/.config/dart/pub-credentials.json
-          {
-            "accessToken": "${{ secrets.PUB_DEV_PUBLISH_ACCESS_TOKEN }}",
-            "refreshToken": "${{ secrets.PUB_DEV_PUBLISH_REFRESH_TOKEN }}",
-            "idToken": "${{ secrets.PUB_DEV_PUBLISH_ID_TOKEN }}",
-            "tokenEndpoint": "${{ secrets.PUB_DEV_PUBLISH_TOKEN_ENDPOINT }}",
-            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-            "expiration": ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
-          }
+          ${{ secrets.PUB_JSON }}
           EOF
           dart pub publish -f
