@@ -7,12 +7,22 @@ environment:
   sdk: ">=2.18.4 <3.0.0"
 
 dependencies:
+  bloc: ^8.1.0
+  equatable: ^2.0.5
   flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  flutter_web_plugins:
     sdk: flutter
   gitmoji:
     path: ../
+  go_router: ^5.2.0
+  hydrated_bloc: ^9.0.0
+  path_provider: ^2.0.11
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0
+
 flutter:
   uses-material-design: true

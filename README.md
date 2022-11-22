@@ -1,5 +1,8 @@
 # Gitmoji
 
+
+[![ci][ci_badge]][ci_link]
+[![pub package][pub_badge]][pub_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
 [![License: MIT][license_badge]][license_link]
@@ -24,6 +27,10 @@ Install it:
 flutter packages get
 ```
 
+[ci_badge]: https://github.com/cgutierr-zgz/gitmoji_flutter/workflows/publish/badge.svg
+[ci_link]: https://github.com/cgutierr-zgz/gitmoji_flutter/actions
+[pub_badge]: https://img.shields.io/pub/v/gitmoji.svg?label=gitmoji
+[pub_link]: https://pub.dev/packages/gitmoji
 [flutter_install_link]: https://docs.flutter.dev/get-started/install
 [github_actions_link]: https://docs.github.com/en/actions/learn-github-actions
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg

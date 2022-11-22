@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 /// [Semver] effect of a given [Gitmoji] commit.
 enum Semver {
   /// [Major] [Semver] change
@@ -22,6 +24,7 @@ enum Gitmoji {
     description: 'Improve structure / format of the code.',
     name: 'art',
     semver: null,
+    color: Color(0xffff7281),
   ),
 
   /// Improve performance
@@ -32,6 +35,7 @@ enum Gitmoji {
     description: 'Improve performance.',
     name: 'zap',
     semver: Semver.patch,
+    color: Color(0xff40c4ff),
   ),
 
   /// Remove code or files
@@ -42,6 +46,7 @@ enum Gitmoji {
     description: 'Remove code or files.',
     name: 'fire',
     semver: null,
+    color: Color(0xffff9d44),
   ),
 
   /// Fix a bug
@@ -52,6 +57,7 @@ enum Gitmoji {
     description: 'Fix a bug.',
     name: 'bug',
     semver: Semver.patch,
+    color: Color(0xff8cd842),
   ),
 
   /// Critical hotfix
@@ -62,6 +68,7 @@ enum Gitmoji {
     description: 'Critical hotfix.',
     name: 'ambulance',
     semver: Semver.patch,
+    color: Color(0xfffb584a),
   ),
 
   /// Introduce new features
@@ -72,6 +79,7 @@ enum Gitmoji {
     description: 'Introduce new features.',
     name: 'sparkles',
     semver: Semver.minor,
+    color: Color(0xffffe55f),
   ),
 
   /// Add or update documentation
@@ -82,6 +90,7 @@ enum Gitmoji {
     description: 'Add or update documentation.',
     name: 'memo',
     semver: null,
+    color: Color(0xff00e676),
   ),
 
   /// Deploy stuff
@@ -92,6 +101,7 @@ enum Gitmoji {
     description: 'Deploy stuff.',
     name: 'rocket',
     semver: null,
+    color: Color(0xff00a9f0),
   ),
 
   /// Add or update the UI and style files
@@ -102,6 +112,7 @@ enum Gitmoji {
     description: 'Add or update the UI and style files.',
     name: 'lipstick',
     semver: Semver.patch,
+    color: Color(0xff80deea),
   ),
 
   /// Begin a project
@@ -112,6 +123,7 @@ enum Gitmoji {
     description: 'Begin a project.',
     name: 'tada',
     semver: null,
+    color: Color(0xfff74d5f),
   ),
 
   /// Add, update, or pass tests
@@ -122,6 +134,7 @@ enum Gitmoji {
     description: 'Add, update, or pass tests.',
     name: 'white-check-mark',
     semver: null,
+    color: Color(0xff77e856),
   ),
 
   /// Fix security issues
@@ -132,6 +145,7 @@ enum Gitmoji {
     description: 'Fix security issues.',
     name: 'lock',
     semver: Semver.patch,
+    color: Color(0xffffce49),
   ),
 
   /// Add or update secrets
@@ -142,6 +156,7 @@ enum Gitmoji {
     description: 'Add or update secrets.',
     name: 'closed-lock-with-key',
     semver: null,
+    color: Color(0xff83beec),
   ),
 
   /// Release / Version tags
@@ -152,6 +167,7 @@ enum Gitmoji {
     description: 'Release / Version tags.',
     name: 'bookmark',
     semver: null,
+    color: Color(0xff80deea),
   ),
 
   /// Fix compiler / linter warnings
@@ -162,6 +178,7 @@ enum Gitmoji {
     description: 'Fix compiler / linter warnings.',
     name: 'rotating-light',
     semver: null,
+    color: Color(0xff536dfe),
   ),
 
   /// Work in progress
@@ -172,6 +189,7 @@ enum Gitmoji {
     description: 'Work in progress.',
     name: 'construction',
     semver: null,
+    color: Color(0xffffb74d),
   ),
 
   /// Fix CI Build
@@ -182,6 +200,7 @@ enum Gitmoji {
     description: 'Fix CI Build.',
     name: 'green-heart',
     semver: null,
+    color: Color(0xffc5e763),
   ),
 
   /// Downgrade dependencies
@@ -192,6 +211,7 @@ enum Gitmoji {
     description: 'Downgrade dependencies.',
     name: 'arrow-down',
     semver: Semver.patch,
+    color: Color(0xffef5350),
   ),
 
   /// Upgrade dependencies
@@ -202,6 +222,7 @@ enum Gitmoji {
     description: 'Upgrade dependencies.',
     name: 'arrow-up',
     semver: Semver.patch,
+    color: Color(0xff00e676),
   ),
 
   /// Pin dependencies to specific versions
@@ -212,6 +233,7 @@ enum Gitmoji {
     description: 'Pin dependencies to specific versions.',
     name: 'pushpin',
     semver: Semver.patch,
+    color: Color(0xff39c2f1),
   ),
 
   /// Add or update CI build system
@@ -222,6 +244,7 @@ enum Gitmoji {
     description: 'Add or update CI build system.',
     name: 'construction-worker',
     semver: null,
+    color: Color(0xff64b5f6),
   ),
 
   /// Add or update analytics or track code
@@ -232,6 +255,7 @@ enum Gitmoji {
     description: 'Add or update analytics or track code.',
     name: 'chart-with-upwards-trend',
     semver: Semver.patch,
+    color: Color(0xffcedae6),
   ),
 
   /// Refactor code
@@ -242,6 +266,7 @@ enum Gitmoji {
     description: 'Refactor code.',
     name: 'recycle',
     semver: null,
+    color: Color(0xff77e856),
   ),
 
   /// Add a dependency
@@ -252,6 +277,7 @@ enum Gitmoji {
     description: 'Add a dependency.',
     name: 'heavy-plus-sign',
     semver: Semver.patch,
+    color: Color(0xff00e676),
   ),
 
   /// Remove a dependency
@@ -262,6 +288,7 @@ enum Gitmoji {
     description: 'Remove a dependency.',
     name: 'heavy-minus-sign',
     semver: Semver.patch,
+    color: Color(0xffef5350),
   ),
 
   /// Add or update configuration files
@@ -272,6 +299,7 @@ enum Gitmoji {
     description: 'Add or update configuration files.',
     name: 'wrench',
     semver: Semver.patch,
+    color: Color(0xffffc400),
   ),
 
   /// Add or update development scripts
@@ -282,6 +310,7 @@ enum Gitmoji {
     description: 'Add or update development scripts.',
     name: 'hammer',
     semver: null,
+    color: Color(0xffffc400),
   ),
 
   /// Internationalization and localization
@@ -292,6 +321,7 @@ enum Gitmoji {
     description: 'Internationalization and localization.',
     name: 'globe-with-meridians',
     semver: Semver.patch,
+    color: Color(0xffe7f4ff),
   ),
 
   /// Fix typos
@@ -302,6 +332,7 @@ enum Gitmoji {
     description: 'Fix typos.',
     name: 'pencil2',
     semver: Semver.patch,
+    color: Color(0xffffce49),
   ),
 
   /// Write bad code that needs to be improved
@@ -312,6 +343,7 @@ enum Gitmoji {
     description: 'Write bad code that needs to be improved.',
     name: 'poop',
     semver: null,
+    color: Color(0xffa78674),
   ),
 
   /// Revert changes
@@ -322,6 +354,7 @@ enum Gitmoji {
     description: 'Revert changes.',
     name: 'rewind',
     semver: Semver.patch,
+    color: Color(0xff56d1d8),
   ),
 
   /// Merge branches
@@ -332,6 +365,7 @@ enum Gitmoji {
     description: 'Merge branches.',
     name: 'twisted-rightwards-arrows',
     semver: null,
+    color: Color(0xff56d1d8),
   ),
 
   /// Add or update compiled files or packages
@@ -342,6 +376,7 @@ enum Gitmoji {
     description: 'Add or update compiled files or packages.',
     name: 'package',
     semver: Semver.patch,
+    color: Color(0xfffdd0ae),
   ),
 
   /// Update code due to external API changes
@@ -352,6 +387,7 @@ enum Gitmoji {
     description: 'Update code due to external API changes.',
     name: 'alien',
     semver: Semver.patch,
+    color: Color(0xffc5e763),
   ),
 
   /// Move or rename resources (e.g.: files, paths, routes)
@@ -362,6 +398,7 @@ enum Gitmoji {
     description: 'Move or rename resources (e.g.: files, paths, routes).',
     name: 'truck',
     semver: null,
+    color: Color(0xffef584a),
   ),
 
   /// Add or update license
@@ -372,6 +409,7 @@ enum Gitmoji {
     description: 'Add or update license.',
     name: 'page-facing-up',
     semver: null,
+    color: Color(0xffd9e3e8),
   ),
 
   /// Introduce breaking changes
@@ -382,6 +420,7 @@ enum Gitmoji {
     description: 'Introduce breaking changes.',
     name: 'boom',
     semver: Semver.major,
+    color: Color(0xfff94f28),
   ),
 
   /// Add or update assets
@@ -392,6 +431,7 @@ enum Gitmoji {
     description: 'Add or update assets.',
     name: 'bento',
     semver: Semver.patch,
+    color: Color(0xffff5864),
   ),
 
   /// Improve accessibility
@@ -402,6 +442,7 @@ enum Gitmoji {
     description: 'Improve accessibility.',
     name: 'wheelchair',
     semver: Semver.patch,
+    color: Color(0xff00b1fb),
   ),
 
   /// Add or update comments in source code
@@ -412,6 +453,7 @@ enum Gitmoji {
     description: 'Add or update comments in source code.',
     name: 'bulb',
     semver: null,
+    color: Color(0xffffce49),
   ),
 
   /// Write code drunkenly
@@ -422,6 +464,7 @@ enum Gitmoji {
     description: 'Write code drunkenly.',
     name: 'beers',
     semver: null,
+    color: Color(0xfffbb64b),
   ),
 
   /// Add or update text and literals
@@ -432,6 +475,7 @@ enum Gitmoji {
     description: 'Add or update text and literals.',
     name: 'speech-balloon',
     semver: Semver.patch,
+    color: Color(0xffcedae6),
   ),
 
   /// Perform database related changes
@@ -442,6 +486,7 @@ enum Gitmoji {
     description: 'Perform database related changes.',
     name: 'card-file-box',
     semver: Semver.patch,
+    color: Color(0xffc5e763),
   ),
 
   /// Add or update logs
@@ -452,6 +497,7 @@ enum Gitmoji {
     description: 'Add or update logs.',
     name: 'loud-sound',
     semver: null,
+    color: Color(0xff23b4d2),
   ),
 
   /// Remove logs
@@ -462,6 +508,7 @@ enum Gitmoji {
     description: 'Remove logs.',
     name: 'mute',
     semver: null,
+    color: Color(0xffe6ebef),
   ),
 
   /// Add or update contributor(s)
@@ -472,6 +519,7 @@ enum Gitmoji {
     description: 'Add or update contributor(s).',
     name: 'busts-in-silhouette',
     semver: null,
+    color: Color(0xffffce49),
   ),
 
   /// Improve user experience / usability
@@ -482,6 +530,7 @@ enum Gitmoji {
     description: 'Improve user experience / usability.',
     name: 'children-crossing',
     semver: Semver.patch,
+    color: Color(0xffffce49),
   ),
 
   /// Make architectural changes
@@ -492,6 +541,7 @@ enum Gitmoji {
     description: 'Make architectural changes.',
     name: 'building-construction',
     semver: null,
+    color: Color(0xffffe55f),
   ),
 
   /// Work on responsive design
@@ -502,6 +552,7 @@ enum Gitmoji {
     description: 'Work on responsive design.',
     name: 'iphone',
     semver: Semver.patch,
+    color: Color(0xff40c4ff),
   ),
 
   /// Mock things
@@ -512,6 +563,7 @@ enum Gitmoji {
     description: 'Mock things.',
     name: 'clown-face',
     semver: null,
+    color: Color(0xffff7281),
   ),
 
   /// Add or update an easter egg
@@ -522,6 +574,7 @@ enum Gitmoji {
     description: 'Add or update an easter egg.',
     name: 'egg',
     semver: Semver.patch,
+    color: Color(0xff77e856),
   ),
 
   /// Add or update a .gitignore file
@@ -532,6 +585,7 @@ enum Gitmoji {
     description: 'Add or update a .gitignore file.',
     name: 'see-no-evil',
     semver: null,
+    color: Color(0xff8bdfe7),
   ),
 
   /// Add or update snapshots
@@ -542,6 +596,7 @@ enum Gitmoji {
     description: 'Add or update snapshots.',
     name: 'camera-flash',
     semver: null,
+    color: Color(0xff00a9f0),
   ),
 
   /// Perform experiments
@@ -552,6 +607,7 @@ enum Gitmoji {
     description: 'Perform experiments.',
     name: 'alembic',
     semver: Semver.patch,
+    color: Color(0xff7f39fb),
   ),
 
   /// Improve SEO
@@ -562,6 +618,7 @@ enum Gitmoji {
     description: 'Improve SEO.',
     name: 'mag',
     semver: Semver.patch,
+    color: Color(0xffffe55f),
   ),
 
   /// Add or update types
@@ -572,6 +629,7 @@ enum Gitmoji {
     description: 'Add or update types.',
     name: 'label',
     semver: Semver.patch,
+    color: Color(0xffcb63e6),
   ),
 
   /// Add or update seed files
@@ -582,6 +640,7 @@ enum Gitmoji {
     description: 'Add or update seed files.',
     name: 'seedling',
     semver: null,
+    color: Color(0xffc5e763),
   ),
 
   /// Add, update, or remove feature flags
@@ -592,6 +651,7 @@ enum Gitmoji {
     description: 'Add, update, or remove feature flags.',
     name: 'triangular-flag-on-post',
     semver: Semver.patch,
+    color: Color(0xffffce49),
   ),
 
   /// Catch errors
@@ -602,6 +662,7 @@ enum Gitmoji {
     description: 'Catch errors.',
     name: 'goal-net',
     semver: Semver.patch,
+    color: Color(0xffc7cb12),
   ),
 
   /// Add or update animations and transitions
@@ -612,6 +673,7 @@ enum Gitmoji {
     description: 'Add or update animations and transitions.',
     name: 'animation',
     semver: Semver.patch,
+    color: Color(0xffffdb3a),
   ),
 
   /// Deprecate code that needs to be cleaned up
@@ -622,6 +684,7 @@ enum Gitmoji {
     description: 'Deprecate code that needs to be cleaned up.',
     name: 'wastebasket',
     semver: Semver.patch,
+    color: Color(0xffd9e3e8),
   ),
 
   /// Work on code related to authorization, roles and permissions
@@ -633,6 +696,7 @@ enum Gitmoji {
         'Work on code related to authorization, roles and permissions.',
     name: 'passport-control',
     semver: Semver.patch,
+    color: Color(0xff4dc6dc),
   ),
 
   /// Simple fix for a non-critical issue
@@ -643,6 +707,7 @@ enum Gitmoji {
     description: 'Simple fix for a non-critical issue.',
     name: 'adhesive-bandage',
     semver: Semver.patch,
+    color: Color(0xfffbcfb7),
   ),
 
   /// Data exploration/inspection
@@ -653,6 +718,7 @@ enum Gitmoji {
     description: 'Data exploration/inspection.',
     name: 'monocle-face',
     semver: null,
+    color: Color(0xffffe55f),
   ),
 
   /// Remove dead code
@@ -663,6 +729,7 @@ enum Gitmoji {
     description: 'Remove dead code.',
     name: 'coffin',
     semver: null,
+    color: Color(0xffd9e3e8),
   ),
 
   /// Add a failing test
@@ -673,6 +740,7 @@ enum Gitmoji {
     description: 'Add a failing test.',
     name: 'test-tube',
     semver: null,
+    color: Color(0xfffb584a),
   ),
 
   /// Add or update business logic
@@ -683,6 +751,7 @@ enum Gitmoji {
     description: 'Add or update business logic.',
     name: 'necktie',
     semver: Semver.patch,
+    color: Color(0xff83beec),
   ),
 
   /// Add or update healthcheck
@@ -693,6 +762,7 @@ enum Gitmoji {
     description: 'Add or update healthcheck.',
     name: 'stethoscope',
     semver: null,
+    color: Color(0xff77e856),
   ),
 
   /// Infrastructure related changes
@@ -703,6 +773,7 @@ enum Gitmoji {
     description: 'Infrastructure related changes.',
     name: 'bricks',
     semver: null,
+    color: Color(0xffff6723),
   ),
 
   /// Improve developer experience
@@ -713,6 +784,7 @@ enum Gitmoji {
     description: 'Improve developer experience.',
     name: 'technologist',
     semver: null,
+    color: Color(0xff86B837),
   ),
 
   /// Add sponsorships or money related infrastructure
@@ -723,6 +795,7 @@ enum Gitmoji {
     description: 'Add sponsorships or money related infrastructure.',
     name: 'money-with-wings',
     semver: null,
+    color: Color(0xffb3c0b1),
   ),
 
   /// Add or update code related to multithreading or concurrency
@@ -733,6 +806,7 @@ enum Gitmoji {
     description: 'Add or update code related to multithreading or concurrency.',
     name: 'thread',
     semver: null,
+    color: Color(0xffffbe7b),
   ),
 
   /// Add or update code related to validation
@@ -743,6 +817,7 @@ enum Gitmoji {
     description: 'Add or update code related to validation.',
     name: 'safety-vest',
     semver: null,
+    color: Color(0xfff2ad52),
   );
 
   /// {@macro gitmoji}
@@ -753,6 +828,7 @@ enum Gitmoji {
     required this.description,
     required this.name,
     required this.semver,
+    required this.color,
   });
 
   /// Emoji of the [Gitmoji]s
@@ -772,6 +848,9 @@ enum Gitmoji {
 
   /// [Semver] of the [Gitmoji]s, if applicable
   final Semver? semver;
+
+  /// [Gitmoji]s Hex color code
+  final Color color;
 
   /// Returns the [Gitmoji] version
   /// Library version is based on the [latest gitmoji release](https://github.com/carloscuesta/gitmoji/releases)
@@ -795,4 +874,19 @@ enum Gitmoji {
   /// Returns the [Gitmoji]s withthout [Semver]
   static List<Gitmoji> get none =>
       values.where((e) => e.semver == null).toList();
+
+  /// Returns all the gitmojis with properties matching the [query]
+  static List<Gitmoji> search(String query) {
+    final lwquery = query.toLowerCase();
+
+    return values.where((e) {
+      return e.emoji.toLowerCase().contains(lwquery) ||
+          // e.entity.toLowerCase().contains(lwquery) ||
+          e.code.toLowerCase().contains(lwquery) ||
+          e.description.toLowerCase().contains(lwquery) ||
+          e.name.toLowerCase().contains(lwquery) ||
+          (e.semver != null &&
+              e.semver!.toString().toLowerCase().contains(lwquery));
+    }).toList();
+  }
 }

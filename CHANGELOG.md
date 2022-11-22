@@ -3,7 +3,6 @@
 - chore: Updated README and CHANGELOG
 - ci: Updated deployment pipelines
 - fix: Updated pana score
-- style: Updated pana score
 - feat: Added new example
 
 # 3.13.0
