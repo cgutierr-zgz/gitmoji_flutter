@@ -1,0 +1,46 @@
+# Contributing to gitmoji library
+
+1. **Document new Gitmojis**
+3. **Fix all linting issues** and run `flutter format .`
+4. **Run `dart pub publish --dry-run`** to test everything it's ok with the version
+5. Testing pub.dev score locally, first install **pana**: `flutter pub global activate pana`, and run `flutter pub global run pana ../gitmoji`
+6. If a new version is going to be published, **update version numbers** in both `CHANGELOG.md`, `pubspec.yaml`, `Gitmoji.version` and `tests`
+7. **Test the code** by creating tests and generate a coverage file with [very_good_cli](https://pub.dev/packages/very_good_cli) using: `flutter test --coverage --test-randomize-ordering-seed random` afterwards, u can install [lcov](https://github.com/linux-test-project/lcov) `brew install lcov` and run `genhtml coverage/lcov.info -o coverage/html`to generate a `.html` report and see the actual code coverage, open it with `open coverage/index.html`
+You can also install [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) in VSCode to see real-time coverage in the IDE once the lcov is generated
+
+```bash
+# Generate lcov file
+flutter test --coverage --test-randomize-ordering-seed random
+
+# Generate html Coverage Report
+genhtml coverage/lcov.info -o coverage/
+
+# Open Coverage Report
+open coverage/index.html
+
+# Full command
+flutter test --coverage --test-randomize-ordering-seed random && genhtml coverage/lcov.info -o coverage/html && open coverage/html/index.html
+
+# Or
+very_good test --coverage && genhtml coverage/lcov.info -o coverage/ && open coverage/index.html
+```
+
+8. **Update `coverage_badge.svg`** file with the current coverage report percentage (there's two fields), update both of them with the same value.
+
+9. **Run `flutter clean`** in example folder
+
+10. **Creating a PR** Remember to use semantic pull request
+Examples:
+	- **fix:** Fix a bug (equivalent to a PATCH in Semantic Versioning).
+	- **feat:** Add a new feature to the codebase (MINOR in semantic versioning).
+	- **chore:** Update something without impacting the user (ex: bump a dependency in package.json).
+	- **ci:** Update something related to the pipelines.
+	- **docs:** Documentation changes.
+	- **style:** Code style change (semicolon, indentation...).
+	- **refactor:** Refactor code without changing public API.
+	- **perf:** Update code performances.
+	- **test:** Add test to an existing feature.
+
+# Publishing
+
+Once merged to main the `publish` pipeline will automatically do `dart pub publish` when everything is ready for a new version

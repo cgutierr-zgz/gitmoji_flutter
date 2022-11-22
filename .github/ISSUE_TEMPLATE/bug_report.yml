@@ -1,0 +1,69 @@
+name: 🐛 Bug Report
+description: Report a new problem encountered
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the issue and how to reproduce it, including what you expected to happen.
+      placeholder: |
+        When I ... I expected to see ... but instead I saw ...
+        ---
+        Steps to reproduce the behavior:
+        1. '...'
+        2. '....'
+        3. '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: What platforms are you seeing the problem on?
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+        - Web
+    validations:
+      required: true
+
+  - type: input
+    id: flutter-version
+    attributes:
+      label: Dart or Flutter version
+      description: What version of dart/flutter are you using? Please, run `flutter --version` and paste the output here.
+      placeholder: |
+        Dart SDK version: 2.18.4 (stable) (Tue Nov 1 15:15:07 2022 +0000) on "macos_arm64"
+        -- or --
+        Flutter 3.3.7 • channel stable • https://github.com/flutter/flutter.git
+        Framework • revision e99c9c7cd9 (3 weeks ago) • 2022-11-01 16:59:00 -0700
+        Engine • revision 857bd6b74c
+        Tools • Dart 2.18.4 • DevTools 2.15.0
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: Shell

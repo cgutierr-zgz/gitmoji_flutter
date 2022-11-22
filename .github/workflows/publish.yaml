@@ -1,0 +1,49 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2.8.0
+        with:
+          flutter-version: '3.3.7'
+          channel: 'stable'
+      - name: Install dependencies 📦
+        run: flutter pub get
+      - name: Analyze 🔍
+        run: flutter analyze
+      - name: Check Publish Warnings 🙏🏽
+        run: dart pub publish --dry-run
+      - name: Clean example project 🧹
+        run: cd example && flutter clean .
+
+        # Pub credentials can be fount at:
+        #
+        # MAC: ~/Library/Application Support/dart as `pub-credentials.json`
+        #
+        # WINDOWS: %APPDATA%/dart/pub-credentials.json
+        #
+        # LINUX: $XDG_CONFIG_HOME/dart/pub-credentials.json
+        #        or
+        #        $HOME/.config/dart/pub-credentials.json
+      - name: Setup Pub Credentials 🎯
+        run: | 
+          mkdir -p $HOME/.config/dart
+          cat <<EOF > $HOME/.config/dart/pub-credentials.json
+          {
+            "accessToken": "${{ secrets.PUB_DEV_PUBLISH_ACCESS_TOKEN }}",
+            "refreshToken": "${{ secrets.PUB_DEV_PUBLISH_REFRESH_TOKEN }}",
+            "idToken": "${{ secrets.PUB_DEV_PUBLISH_ID_TOKEN }}",
+            "tokenEndpoint": "${{ secrets.PUB_DEV_PUBLISH_TOKEN_ENDPOINT }}",
+            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+            "expiration": ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
+          }
+          EOF
+          dart pub publish -f
