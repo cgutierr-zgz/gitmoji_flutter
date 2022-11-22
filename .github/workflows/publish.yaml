@@ -13,8 +13,8 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2.8.0
         with:
-          flutter-version: '3.3.7'
-          channel: 'stable'
+          flutter-version: "3.3.7"
+          channel: "stable"
       - name: Install dependencies 📦
         run: flutter pub get
       - name: Analyze 🔍
@@ -34,9 +34,12 @@ jobs:
         #        or
         #        $HOME/.config/dart/pub-credentials.json
       - name: Setup Pub Credentials 🎯
-        run: | 
+        run: |
           mkdir -p $HOME/.config/dart
           cat <<EOF > $HOME/.config/dart/pub-credentials.json
           ${{ secrets.PUB_JSON }}
           EOF
           dart pub publish -f
+
+      # TODO(carlito): Add deployment to GitHub Pages
+      # TODO(carlito): create release
