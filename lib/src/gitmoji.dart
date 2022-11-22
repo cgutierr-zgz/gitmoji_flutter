@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 /// [Semver] effect of a given [Gitmoji] commit.
 enum Semver {
   /// [Major] [Semver] change
