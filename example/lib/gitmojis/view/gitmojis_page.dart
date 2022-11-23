@@ -78,8 +78,10 @@ class _GitmojiPageState extends State<GitmojiPage> {
                                     borderRadius: BorderRadius.circular(2),
                                   ),
                                   child: const Center(
-                                    child: Text('⌘ K',
-                                        textAlign: TextAlign.center),
+                                    child: Text(
+                                      '⌘ K',
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -95,6 +97,7 @@ class _GitmojiPageState extends State<GitmojiPage> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 20),
                     Wrap(
                       runSpacing: 25,
                       spacing: 25,

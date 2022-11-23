@@ -13,17 +13,15 @@ abstract class AppRouter {
               child: const GitmojiPage(),
             ),
           ),
-          ...Gitmoji.all
-              .map(
-                (g) => GoRoute(
-                  path: g.path,
-                  pageBuilder: (context, state) => MaterialPage<void>(
-                    key: state.pageKey,
-                    child: g.view,
-                  ),
-                ),
-              )
-              .toList(),
+          ...Gitmoji.all.map(
+            (g) => GoRoute(
+              path: g.path,
+              pageBuilder: (context, state) => MaterialPage<void>(
+                key: state.pageKey,
+                child: g.view,
+              ),
+            ),
+          ),
         ],
       );
 }

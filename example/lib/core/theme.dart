@@ -6,11 +6,13 @@ abstract class AppTheme {
 
   static ThemeData get lightTheme => ThemeData(
         scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Avenir',
       );
 
   static ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.black,
+        fontFamily: 'Avenir',
       );
 }
 
@@ -66,7 +68,7 @@ body {
   padding: 0;
   font-size: 16.5px;
   font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue'
     sans-serif;
 }
 
@@ -92,7 +94,7 @@ a:hover {
 
 code {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue'
     sans-serif;
   font-weight: 700;
   font-size: 1.25em;

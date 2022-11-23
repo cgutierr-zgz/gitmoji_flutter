@@ -25,7 +25,10 @@ class Button extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           boxShadow: const [
             BoxShadow(
-                color: Colors.black38, blurRadius: 10, offset: Offset(0, 4)),
+              color: Colors.black38,
+              blurRadius: 10,
+              offset: Offset(0, 4),
+            ),
           ],
         ),
         child: Icon(icon),

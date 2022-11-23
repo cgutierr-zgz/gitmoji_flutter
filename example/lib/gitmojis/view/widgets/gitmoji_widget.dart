@@ -46,16 +46,7 @@ class _GitmojiWidgetState extends State<GitmojiWidget> {
           child: Column(
             children: [
               Expanded(
-                child: Container(
-                  alignment: Alignment.center,
-                  color: widget.gitmoji.color,
-                  width: double.maxFinite,
-                  child: Text(
-                    widget.gitmoji.emoji,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 50),
-                  ),
-                ),
+                child: _GitmojiSelector(widget.gitmoji),
               ),
               Expanded(
                 child: Padding(
@@ -85,6 +76,85 @@ class _GitmojiWidgetState extends State<GitmojiWidget> {
   }
 }
 
+class _GitmojiSelector extends StatefulWidget {
+  const _GitmojiSelector(this.gitmoji);
+
+  final Gitmoji gitmoji;
+
+  @override
+  State<_GitmojiSelector> createState() => _GitmojiSelectorState();
+}
+
+class _GitmojiSelectorState extends State<_GitmojiSelector>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    );
+
+    animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    controller.addListener(() => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  void onEnter() => controller.forward();
+
+  void onExit() => controller.reverse();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      color: widget.gitmoji.color,
+      width: double.maxFinite,
+      child: MouseRegion(
+        onEnter: (_) => onEnter(),
+        onExit: (_) => onExit(),
+        child: GestureDetector(
+          onTap: () {
+            Clipboard.setData(ClipboardData(text: widget.gitmoji.code)).then(
+              (_) => context.showSnackBar(
+                '${widget.gitmoji.emoji} Coppied to clipboard',
+              ),
+            );
+            controller.forward().then(
+                  (value) => controller.reverse(from: controller.value),
+                );
+          },
+          onTapDown: (_) => onEnter(),
+          onTapCancel: () => controller.reverse(from: controller.value),
+          onTapUp: (_) => onExit(),
+          child: Transform.translate(
+            offset: Offset(0, 10 * animation.value),
+            child: Text(
+              widget.gitmoji.emoji,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _GitmojiTextSelector extends StatefulWidget {
   const _GitmojiTextSelector(this.gitmoji);
 
@@ -98,14 +168,13 @@ class _GitmojiTextSelectorState extends State<_GitmojiTextSelector>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
-  // TOOD(Carlito): intrisic animation, heights, tween ok
 
   @override
   void initState() {
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 100),
+      duration: const Duration(milliseconds: 200),
     );
 
     animation = Tween<double>(begin: 0, end: 1).animate(
@@ -150,7 +219,6 @@ class _GitmojiTextSelectorState extends State<_GitmojiTextSelector>
     return MouseRegion(
       onEnter: (_) => onEnter(),
       onExit: (_) => onExit(),
-      onHover: (_) => controller.value = 1,
       child: GestureDetector(
         onTap: () {
           Clipboard.setData(ClipboardData(text: widget.gitmoji.code)).then(
