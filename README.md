@@ -22,8 +22,8 @@ Install it:
 flutter packages get
 ```
 
-[gitmoji_logo_light]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji.gif#gh-light-mode-only
-[gitmoji_logo_dark]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji_dark.gif#gh-dark-mode-only
+[gitmoji_logo_light]: /assets/gitmoji.gif#gh-light-mode-only
+[gitmoji_logo_dark]: /assets/gitmoji_dark.gif#gh-dark-mode-only
 [ci_badge]: https://github.com/cgutierr-zgz/gitmoji_flutter/workflows/publish/badge.svg
 [ci_link]: https://github.com/cgutierr-zgz/gitmoji_flutter/actions
 [pub_badge]: https://img.shields.io/pub/v/gitmoji.svg?label=gitmoji
