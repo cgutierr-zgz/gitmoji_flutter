@@ -71,9 +71,6 @@ class _GitmojiWidgetState extends State<GitmojiWidget> {
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: isDark ? Colors.white : Colors.black,
-                          ),
                         ),
                       ),
                     ],
@@ -133,15 +130,12 @@ class _GitmojiTextSelectorState extends State<_GitmojiTextSelector>
 
   @override
   Widget build(BuildContext context) {
-    final isDark = context.isDark;
-
     final text = Text(
       widget.gitmoji.code,
       textAlign: TextAlign.center,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 17,
         fontWeight: FontWeight.bold,
-        color: isDark ? Colors.white : Colors.black,
       ),
     );
 

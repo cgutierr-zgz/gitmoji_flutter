@@ -36,13 +36,3 @@ extension AppRoutesX on Gitmoji {
   void push(BuildContext context) => context.push(path);
   void replace(BuildContext context) => context.replace(path);
 }
-
-class GitmojiWidget extends StatelessWidget {
-  const GitmojiWidget(this.gitmoji, {super.key});
-  final Gitmoji gitmoji;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}

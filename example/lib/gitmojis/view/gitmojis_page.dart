@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:example/core/core.dart';
 import 'package:example/gitmojis/gitmojis.dart';
 import 'package:example/settings/settings.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,9 @@ class _GitmojiPageState extends State<GitmojiPage> {
   late final ScrollController scrollController;
   late Color color;
 
-  Color getNewColor() => Gitmoji.all.map((e) => e.color).toList()[Random().nextInt(Gitmoji.all.length)];
+  Color getNewColor() => Gitmoji.all
+      .map((e) => e.color)
+      .toList()[Random().nextInt(Gitmoji.all.length)];
 
   @override
   void initState() {
@@ -34,6 +37,8 @@ class _GitmojiPageState extends State<GitmojiPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = context.isDark;
+
     return Scaffold(
       body: RawScrollbar(
         controller: scrollController,
@@ -50,27 +55,43 @@ class _GitmojiPageState extends State<GitmojiPage> {
                     Row(
                       children: [
                         Expanded(
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: const OutlineInputBorder(),
-                              labelText: 'Search your gitmoji...',
-                              suffixIcon: Container(
-                                width: 40,
-                                margin: const EdgeInsets.only(right: 10),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: color),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: const Center(
-                                  child: Text('⌘ K', textAlign: TextAlign.center),
+                          child: SizedBox(
+                            height: 40,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: const OutlineInputBorder(),
+                                labelText: 'Search your gitmoji...',
+                                suffixIcon: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  width: 40,
+                                  margin: const EdgeInsets.only(
+                                    top: 5,
+                                    bottom: 5,
+                                    right: 10,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: isDark
+                                          ? Colors.white54
+                                          : Colors.black,
+                                    ),
+                                    borderRadius: BorderRadius.circular(2),
+                                  ),
+                                  child: const Center(
+                                    child: Text('⌘ K',
+                                        textAlign: TextAlign.center),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
+                        const SizedBox(width: 10),
                         Button(
-                          icon: Icons.abc,
-                          onTap: () => context.read<SettingsCubit>().toggleThemeMode(context),
+                          icon: isDark ? Icons.light_mode : Icons.mode_night,
+                          onTap: () => context
+                              .read<SettingsCubit>()
+                              .toggleThemeMode(context),
                         ),
                       ],
                     ),
