@@ -1,22 +1,17 @@
 import 'package:example/core/core.dart';
+import 'package:example/settings/settings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Button extends StatelessWidget {
-  const Button({
-    super.key,
-    required this.onTap,
-    required this.icon,
-  });
-
-  final void Function()? onTap;
-  final IconData icon;
+class ThemeToogleButton extends StatelessWidget {
+  const ThemeToogleButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     final isDark = context.isDark;
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: () => context.read<SettingsCubit>().toggleThemeMode(context),
       child: Container(
         height: 40,
         width: 40,
@@ -31,7 +26,9 @@ class Button extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(icon),
+        child: Icon(
+          isDark ? Icons.light_mode : Icons.mode_night,
+        ),
       ),
     );
   }
