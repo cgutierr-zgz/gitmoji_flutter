@@ -1,3 +1,7 @@
+# 3.13.0+3
+
+- chore: Fixes pana score
+
 # 3.13.0+2
 
 - chore: Updated README
