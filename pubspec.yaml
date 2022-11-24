@@ -1,5 +1,5 @@
 name: gitmoji
-description: Gitmoji for Flutter
+description: All available Gitmoji as an Enum for Flutter
 version: 3.13.0+1
 
 homepage: https://github.com/cgutierr-zgz/gitmoji_flutter
@@ -13,3 +13,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/Avenir-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Avenir.otf
+          weight: 400
