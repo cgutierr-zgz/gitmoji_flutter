@@ -1,5 +1,5 @@
-![Gitmoji][gitmoji_logo_light]
-![Gitmoji][gitmoji_logo_dark]
+[![Gitmoji][gitmoji_logo_light]][gitmoji_link_light]
+[![Gitmoji][gitmoji_logo_dark]][gitmoji_link_dark]
 
 [![ci][ci_badge]][ci_link] [![pub package][pub_badge]][pub_link] [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link] [![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason) [![License: MIT][license_badge]][license_link] ![Coverage badge][coverage_badge] [![gitmoji][gitmoji_badge]][gitmoji_link]
 
@@ -22,6 +22,10 @@ Install it:
 flutter packages get
 ```
 
+[gitmoji_logo_light]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji.gif#gh-light-mode-only
+[gitmoji_logo_dark]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji_dark.gif#gh-dark-mode-only
+[gitmoji_link_light]: https://pub.dev/packages/gitmoji#gh-light-mode-only
+[gitmoji_link_dark]: https://pub.dev/packages/gitmoji#gh-dark-mode-only
 [gitmoji_logo_light]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji.gif#gh-light-mode-only
 [gitmoji_logo_dark]: https://raw.githubusercontent.com/cgutierr-zgz/gitmoji_flutter/main/assets/gitmoji_dark.gif#gh-dark-mode-only
 [ci_badge]: https://github.com/cgutierr-zgz/gitmoji_flutter/workflows/publish/badge.svg

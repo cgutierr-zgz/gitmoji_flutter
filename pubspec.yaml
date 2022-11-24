@@ -1,5 +1,5 @@
 name: gitmoji
-description: All available Gitmoji as an Enum for Flutter
+description: A list of all available Gitmoji's as an Enum for Flutter, based on gitmoji.dev
 version: 3.13.0+2
 
 homepage: https://github.com/cgutierr-zgz/gitmoji_flutter
