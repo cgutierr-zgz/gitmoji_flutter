@@ -9,6 +9,10 @@ issue_tracker: https://github.com/cgutierr-zgz/gitmoji_flutter/issues
 environment:
   sdk: ">=2.18.0 <3.0.0"
 
+dependencies:
+  flutter:
+    sdk: flutter
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
