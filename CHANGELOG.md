@@ -1,3 +1,7 @@
+# 3.13.0+2
+
+- chore: Updated README
+
 # 3.13.0+1
 
 - chore: Updated README and CHANGELOG
