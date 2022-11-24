@@ -17,16 +17,16 @@ class GitmojiPage extends StatefulWidget {
 class _GitmojiPageState extends State<GitmojiPage> {
   late final ScrollController scrollController;
   late Color color;
+  late List<Gitmoji> gitmojis;
 
-  Color getNewColor() => Gitmoji.all
-      .map((e) => e.color)
-      .toList()[Random().nextInt(Gitmoji.all.length)];
+  Color getNewColor() => Gitmoji.all.map((e) => e.color).toList()[Random().nextInt(Gitmoji.all.length)];
 
   @override
   void initState() {
     super.initState();
     scrollController = ScrollController();
     color = getNewColor();
+    gitmojis = Gitmoji.all;
   }
 
   @override
@@ -49,7 +49,7 @@ class _GitmojiPageState extends State<GitmojiPage> {
             controller: scrollController,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     Row(
@@ -58,6 +58,7 @@ class _GitmojiPageState extends State<GitmojiPage> {
                           child: SizedBox(
                             height: 40,
                             child: TextFormField(
+                              onChanged: (query) => setState(() => gitmojis = Gitmoji.search(query)),
                               decoration: InputDecoration(
                                 border: const OutlineInputBorder(),
                                 labelText: 'Search your gitmoji...',
@@ -71,9 +72,7 @@ class _GitmojiPageState extends State<GitmojiPage> {
                                   ),
                                   decoration: BoxDecoration(
                                     border: Border.all(
-                                      color: isDark
-                                          ? Colors.white54
-                                          : Colors.black,
+                                      color: isDark ? Colors.white54 : Colors.black,
                                     ),
                                     borderRadius: BorderRadius.circular(2),
                                   ),
@@ -91,9 +90,7 @@ class _GitmojiPageState extends State<GitmojiPage> {
                         const SizedBox(width: 10),
                         Button(
                           icon: isDark ? Icons.light_mode : Icons.mode_night,
-                          onTap: () => context
-                              .read<SettingsCubit>()
-                              .toggleThemeMode(context),
+                          onTap: () => context.read<SettingsCubit>().toggleThemeMode(context),
                         ),
                       ],
                     ),
@@ -102,8 +99,8 @@ class _GitmojiPageState extends State<GitmojiPage> {
                       runSpacing: 25,
                       spacing: 25,
                       children: List.generate(
-                        Gitmoji.all.length,
-                        (i) => GitmojiWidget(Gitmoji.all[i]),
+                        gitmojis.length,
+                        (i) => GitmojiWidget(gitmojis[i]),
                       ),
                     ),
                   ],

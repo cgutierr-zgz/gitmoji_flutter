@@ -28,47 +28,52 @@ class _GitmojiWidgetState extends State<GitmojiWidget> {
     return MouseRegion(
       onEnter: (_) => setState(() => onHover = true),
       onExit: (_) => setState(() => onHover = false),
-      child: Card(
-        elevation: onHover ? 10 : 1,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: 150,
-          height: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: isDark
-                ? onHover
-                    ? Colors.grey.shade800
-                    : Colors.grey.shade900
-                : Colors.white,
-          ),
-          clipBehavior: Clip.hardEdge,
-          child: Column(
-            children: [
-              Expanded(
-                child: _GitmojiSelector(widget.gitmoji),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _GitmojiTextSelector(widget.gitmoji),
-                      const SizedBox(height: 10),
-                      Expanded(
-                        child: Text(
-                          widget.gitmoji.description,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
+      child: GestureDetector(
+        onTapDown: (_) => setState(() => onHover = true),
+        onTapUp: (_) => setState(() => onHover = false),
+        onTapCancel: () => setState(() => onHover = false),
+        child: Card(
+          elevation: onHover ? 10 : 1,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: 150,
+            height: 250,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: isDark
+                  ? onHover
+                      ? Colors.grey.shade800
+                      : Colors.grey.shade900
+                  : Colors.white,
+            ),
+            clipBehavior: Clip.hardEdge,
+            child: Column(
+              children: [
+                Expanded(
+                  child: _GitmojiSelector(widget.gitmoji),
                 ),
-              )
-            ],
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _GitmojiTextSelector(widget.gitmoji),
+                        const SizedBox(height: 10),
+                        Expanded(
+                          child: Text(
+                            widget.gitmoji.description,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

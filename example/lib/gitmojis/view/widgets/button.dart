@@ -23,11 +23,11 @@ class Button extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDark ? Colors.black : Colors.white,
           borderRadius: BorderRadius.circular(5),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-              color: Colors.black38,
+              color: Colors.black38.withOpacity(0.2),
               blurRadius: 10,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
