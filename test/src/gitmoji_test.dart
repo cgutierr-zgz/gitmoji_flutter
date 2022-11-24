@@ -7,7 +7,8 @@ void main() {
   const actualGitmojisMajor = 1;
   const actualGitmojisMinor = 1;
   const actualGitmojisPatch = 34;
-  const actualGitmojisNoSemver = actualGitmojis - (actualGitmojisMajor + actualGitmojisMinor + actualGitmojisPatch);
+  const actualGitmojisNoSemver = actualGitmojis -
+      (actualGitmojisMajor + actualGitmojisMinor + actualGitmojisPatch);
 
   group('Gitmoji', () {
     test('can get all values', () {
