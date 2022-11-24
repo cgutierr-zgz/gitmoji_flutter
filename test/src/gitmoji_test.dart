@@ -7,8 +7,7 @@ void main() {
   const actualGitmojisMajor = 1;
   const actualGitmojisMinor = 1;
   const actualGitmojisPatch = 34;
-  const actualGitmojisNoSemver = actualGitmojis -
-      (actualGitmojisMajor + actualGitmojisMinor + actualGitmojisPatch);
+  const actualGitmojisNoSemver = actualGitmojis - (actualGitmojisMajor + actualGitmojisMinor + actualGitmojisPatch);
 
   group('Gitmoji', () {
     test('can get all values', () {
@@ -51,6 +50,26 @@ void main() {
       expect(gitmojisNoSemver, isNotEmpty);
       expect(gitmojisNoSemver, isA<List<Gitmoji>>());
       expect(gitmojisNoSemver.length, actualGitmojisNoSemver);
+    });
+
+    test('search query works', () {
+      final gitmojiQueryResult = Gitmoji.search(':art:');
+
+      expect(gitmojiQueryResult, isNotEmpty);
+      expect(gitmojiQueryResult, isA<List<Gitmoji>>());
+      expect(gitmojiQueryResult.length, 1);
+
+      final gitmojiQueryResult2 = Gitmoji.search('art');
+
+      expect(gitmojiQueryResult2, isNotEmpty);
+      expect(gitmojiQueryResult2, isA<List<Gitmoji>>());
+      expect(gitmojiQueryResult2.length, 3);
+
+      final gitmojiQueryResult3 = Gitmoji.search('example');
+
+      expect(gitmojiQueryResult3, isEmpty);
+      expect(gitmojiQueryResult3, isA<List<Gitmoji>>());
+      expect(gitmojiQueryResult3.length, 0);
     });
   });
 }
