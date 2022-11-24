@@ -19,7 +19,9 @@ class _GitmojiPageState extends State<GitmojiPage> {
   late List<Gitmoji> gitmojis;
   late bool isTapUpVisible;
 
-  Color getNewColor() => Gitmoji.all.map((e) => e.color).toList()[Random().nextInt(Gitmoji.all.length)];
+  Color getNewColor() => Gitmoji.all
+      .map((e) => e.color)
+      .toList()[Random().nextInt(Gitmoji.all.length)];
 
   @override
   void initState() {
@@ -66,7 +68,9 @@ class _GitmojiPageState extends State<GitmojiPage> {
                   child: Column(
                     children: [
                       Image.asset(
-                        isDark ? '../assets/gitmoji_dark.gif' : '../assets/gitmoji.gif',
+                        isDark
+                            ? '../assets/gitmoji_dark.gif'
+                            : '../assets/gitmoji.gif',
                         height: 100,
                       ),
                       const SizedBox(height: 20),
