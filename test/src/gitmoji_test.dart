@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gitmoji/gitmoji.dart';
 
 void main() {
-  const actualVersion = '3.13.0';
+  const actualVersion = '3.13.1';
   const actualGitmojis = 73;
   const actualGitmojisMajor = 1;
   const actualGitmojisMinor = 1;

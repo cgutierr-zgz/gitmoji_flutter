@@ -1,3 +1,7 @@
+# 3.13.1
+
+- feat: Update to gitmoji 3.13.1
+
 # 3.13.0+4
 
 - chore: Updates to README

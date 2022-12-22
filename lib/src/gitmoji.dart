@@ -854,7 +854,7 @@ enum Gitmoji {
 
   /// Returns the [Gitmoji] version
   /// Library version is based on the [latest gitmoji release](https://github.com/carloscuesta/gitmoji/releases)
-  static String get version => '3.13.0';
+  static String get version => '3.13.1';
 
   /// Returns all the [Gitmoji]s
   static List<Gitmoji> get all => values;
