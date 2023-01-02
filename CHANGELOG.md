@@ -1,4 +1,4 @@
-# 3.13.1
+# 3.13.2
 
 - feat: Update to gitmoji 3.13.2
 
