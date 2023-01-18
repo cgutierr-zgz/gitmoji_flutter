@@ -1,3 +1,7 @@
+# 3.13.4
+
+- feat: Update to gitmoji 3.13.4
+
 # 3.13.3
 
 - feat: Update to gitmoji 3.13.3
