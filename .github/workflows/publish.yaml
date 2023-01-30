@@ -41,5 +41,6 @@ jobs:
           EOF
           dart pub publish -f
 
+      # TODO(carlito): Create automated release -> https://dart.dev/tools/pub/automated-publishing
       # TODO(carlito): Add deployment to GitHub Pages
       # TODO(carlito): create release
